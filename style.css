@@ -1,0 +1,185 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('Bebas Neue Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Apply the font to the heading */
+h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8em;
+  margin-bottom: 0.5em;
+}
+.form-section {
+  width: 40%;
+  height: 1200px; /* Set a fixed height as desired */
+  overflow-y: auto; /* Adds a scrollbar if content exceeds height */
+}
+
+.form-section, .output-section {
+  flex: 1;
+  padding: 20px;
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 4.2em;
+  margin-bottom: 0.2em;
+}
+
+.subtitle {
+  font-size: 1.6em;
+  color: #777;
+  margin-bottom: 1.5em;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-top: 1em;
+  color: #444;
+}
+
+input[type="text"], select, input[type="range"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 0.5em;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+  background-color: #f9f9f9;
+}
+
+.comment {
+  display: inline-block;
+  font-size: 0.9em;
+  color: #888;
+}
+
+button {
+  display: inline-block;
+  margin-top: 1em;
+  padding: 10px 15px;
+  font-size: 1em;
+  font-weight: bold;
+  color: #fff;
+  background-color: #5a67d8;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+button:hover:enabled {
+  background-color: #4c51bf;
+}
+
+.output-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#patternCanvas {
+  width: 100%;
+  height: 500px;
+  border: 1px solid #ddd;
+  margin-top: 1em;
+  border-radius: 8px;
+}
+
+#outputText {
+  margin-top: 1em;
+}
+
+#calorieEstimate {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #444;
+  margin: 0.5em 0;
+}
+
+#dishTitle {
+  font-size: 2.3em;
+  font-weight: bold;
+  color: #333;
+}
+
+#poemOutput {
+  font-size: 1em;
+  font-style: italic;
+  font-family: "Times New Roman", serif; /* Different font for poem */
+  color: #666;
+  margin-top: 0.5em;
+  padding: 0 1em;
+  line-height: 1.4em;
+  font-weight: normal; /* Ensures regular weight for the poem */
+}
+
+/* Define container to display form and output side by side */
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+/* Style for the form section on the left */
+.form-section {
+  width: 40%;
+}
+
+/* Style for the output section on the right with increased height */
+.output-section {
+  width: 55%;
+  height: 1200px; /* Increase height to make it taller */
+  overflow-y: auto; /* Allows scrolling if content overflows */
+}
+
+/* Ensures the canvas fills the output section */
+#patternCanvas {
+  width: 100%;
+  height: 80%; /* Allocate space for patternCanvas */
+}
+
+#outputText {
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  height: auto; /* Allows height to expand as needed */
+  max-height: 400px; /* Limits the maximum height */
+  overflow-y: auto; /* Adds a scrollbar if content exceeds max-height */
+}

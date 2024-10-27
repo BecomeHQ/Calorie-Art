@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caloric Signature Creator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.js"></script>
+</head>
+
+<body>
+  <main class="container">
+    <!-- Form Section (Left Side) -->
+    <div class="form-section">
+      <h1>A CANVAS</p> FOR YOUR CRAVINGS</h1>
+      <p class="subtitle">Discover the caloric shape of you from every bite that you intend to take</p>
+      <p class="description">See how your small intestine prepares to accommodate your craving; here’s an art form inspired by that journey. Each swipe creates a signature deep within, mapping your daily appetite from screen to stomach: crafted from your cravings, habits, and personality. Discover what your calories look like, sound like, and the poem they digest for you. This craving caricature is your contribution to the city’s growing appetite.
+</p>
+      <br>
+
+      <label for="name">What's Your Sweet Name?</label>
+      <input id="name" type="text" placeholder="e.g., Doe John" value="">
+
+      <label for="dish">The One Dish That You Constantly Crave For?</label>
+      <input id="dish" type="text" placeholder="e.g., Sushi" value="">
+
+      <label for="mealCount">The Number Of Meals You Are Hoping To Have Today: <span id="mealCountDisplay">0</span>
+        <span id="mealComment" class="comment">Looks moderate!</span>
+      </label>
+      <input id="mealCount" type="range" min="0" max="7" step="1" value="0" oninput="updateMealDisplay()">
+
+      <label for="eaterType">What's Your Food Persona?</label>
+      <select id="eaterType">
+        <option value="" disabled selected>Select one...</option>
+        <option value="Vegan">Plant Fanatic (Vegan)</option>
+        <option value="Vegetarian">Veggie Power (Vegetarian)</option>
+        <option value="Eggitarian">Eggs Only Club (Eggitarian)</option>
+        <option value="Chicketerian">Chicken Enthusiast</option>
+        <option value="Seafood">Sea Lover (Seafood)</option>
+        <option value="Omnivore">Omnivore (All Types)</option>
+      </select>
+
+      <label for="mood">How's Your Mood Today?:</label>
+      <select id="mood">
+        <option value="" disabled selected>Select one...</option>
+        <option value="Healthy">Feeling Fit and Fresh</option>
+        <option value="Comfort Food">In Need of Comfort</option>
+        <option value="Indulgent">Time to Indulge</option>
+        <option value="Snacking">Snacky and Craving</option>
+        <option value="Stressed Eating">Most Likely Binge Eating!</option>
+      </select>
+
+      <label for="dineOption">How Are You Planning Your Next Meal?</label>
+      <select id="dineOption">
+        <option value="" disabled selected>Select one...</option>
+         <option value="Diet">Skipping</option>
+        <option value="Cooking">Cooking Up at Home</option>
+        <option value="Dining Out">Fine Dining Vibes</option>
+        <option value="PArty">Crashing at a Party</option>
+        <option value="Ordering In">Ordering (the Usual)</option>
+      </select>
+<br><br>
+      <!-- Generate, Restart, and Save Buttons -->
+      <button id="generateBtn" onclick="generateSignature()">Generate Caloric Art</button><br><br>
+      <button id="restartBtn" onclick="restartCanvas()"disabled>Restart</button>
+      <button id="saveBtn" onclick="captureSignature()" disabled>Save </button>
+<button id="playBurpSoundBtn" onclick="playBurpSound()"disabled> Burp It</button>
+
+            <br><br><br><br>
+
+            <p class="description">© 2024 Indhu Kanth. Become®. All rights reserved.
+<br>
+For suggestion & collaboration, reach out to ink@become.team</p>
+
+    </div>
+
+    
+    
+    <!-- Output Section (Right Side) -->
+    <div class="output-section">
+      <div id="patternCanvas"></div>
+      <div id="outputText">
+        <p id="calorieEstimate" style="display: none;">Estimated Calories: <span id="calorieCount">0</span> kcal</p>
+        <p id="dishTitle"></p>
+        <p id="poemOutput"></p>
+      </div>
+    </div>
+  </main>
+
+  <!-- JavaScript Sketch -->
+  <script src="sketch.js"></script>
+</body>
+</html>
